@@ -18,5 +18,9 @@ public class MainActivity extends AppCompatActivity {
         if(getIntent().getData() != null){
             txtMessage.setText(getIntent().getDataString());
         }
+
+        else {
+            txtMessage.setText("No Data Received");
+        }
     }
 }

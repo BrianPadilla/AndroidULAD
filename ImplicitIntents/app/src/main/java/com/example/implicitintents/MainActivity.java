@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel: 3111173778"));
+                startActivity(intent);
 
             }
         });
@@ -45,12 +46,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
+                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("http://cavestory.org"));
+                startActivity(intent);
+
             }
         });
 
         btnmap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("geo:0,0?=12 Adolfo Lopez Mateos ,Tepic"));
+                startActivity(intent);
 
             }
         });
