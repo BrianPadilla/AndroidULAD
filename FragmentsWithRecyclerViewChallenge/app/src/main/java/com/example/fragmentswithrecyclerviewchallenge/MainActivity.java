@@ -14,8 +14,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements CarroAdapter.ItemClicked {
 
-    TextView lblModelo,lblPropietario,lblFijo,lblTelefono;
+    TextView lblModelo,lblPropietario,lblFijo,lblTelefono,lblCardModelo;
     Button btnCarroInfo,btnPropInfo;
+    ImageView imvCarroInfo;
     ListaFragment listaFrag;
     FragmentManager fragmentManager;
 
@@ -31,9 +32,13 @@ public class MainActivity extends AppCompatActivity implements CarroAdapter.Item
         lblTelefono = findViewById(R.id.lblTelefono);
         btnCarroInfo = findViewById(R.id.btnCarroInfo);
         btnPropInfo = findViewById(R.id.btnPropietarioInfo);
+        imvCarroInfo = findViewById(R.id.imvCarroInfo);
+        lblCardModelo = findViewById(R.id.lblCardModelo);
 
         fragmentManager = this.getSupportFragmentManager();
         listaFrag = (ListaFragment) fragmentManager.findFragmentById(R.id.listFrag);
+
+
 
         btnCarroInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements CarroAdapter.Item
         });
 
 
+        onItemClicked(0);
+
 
 
 
@@ -68,10 +75,16 @@ public class MainActivity extends AppCompatActivity implements CarroAdapter.Item
     @Override
     public void onItemClicked(int index) {
 
+
+
         lblModelo.setText(ArrayListCarros.carro.get(index).getModelo());
         lblFijo.setText("Informacion del Propietario");
         lblPropietario.setText(ArrayListCarros.carro.get(index).getDueño());
         lblTelefono.setText(ArrayListCarros.carro.get(index).getTelefono());
+        imvCarroInfo.setImageResource(ArrayListCarros.carro.get(index).getImagen());
+
+
+
 
 
 

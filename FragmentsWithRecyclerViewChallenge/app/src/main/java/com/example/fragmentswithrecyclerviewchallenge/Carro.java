@@ -5,12 +5,14 @@ package com.example.fragmentswithrecyclerviewchallenge;
 public class Carro {
 
     String modelo,dueño,telefono;
+    Integer imagen;
 
 
-    public Carro(String dueño, String modelo, String telefono) {
+    public Carro(String dueño, String modelo, String telefono, Integer imagen) {
         this.modelo = modelo;
         this.dueño = dueño;
         this.telefono = telefono;
+        this.imagen = imagen;
 
     }
 
@@ -38,5 +40,11 @@ public class Carro {
         this.telefono = telefono;
     }
 
+    public Integer getImagen() {
+        return imagen;
+    }
 
+    public void setImagen(Integer imagen) {
+        this.imagen = imagen;
+    }
 }

@@ -12,22 +12,22 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnCarroInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:text="CARROINFO" />
-
-        <Button
             android:id="@+id/btnPropietarioInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="PropInfo" />
 
+        <Button
+            android:id="@+id/btnCarroInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="CARROINFO" />
     </LinearLayout>
 
 </LinearLayout>

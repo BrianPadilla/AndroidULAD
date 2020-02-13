@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,8 @@ public class CarroAdapter extends RecyclerView.Adapter<CarroAdapter.ViewHolder> 
     private ArrayList<Carro> carro;
     ItemClicked activity;
 
+
+
     public interface ItemClicked{
         void onItemClicked(int index);
     }
@@ -24,16 +27,19 @@ public class CarroAdapter extends RecyclerView.Adapter<CarroAdapter.ViewHolder> 
     public CarroAdapter(Context context, ArrayList<Carro> carro) {
         this.carro = carro;
         activity = (ItemClicked) context;
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView lblCardModelo;
+        ImageView imagen;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             lblCardModelo = itemView.findViewById(R.id.lblCardModelo);
+            imagen = itemView.findViewById(R.id.imvCardCarro);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -60,13 +66,15 @@ public class CarroAdapter extends RecyclerView.Adapter<CarroAdapter.ViewHolder> 
             public void onBindViewHolder (@NonNull CarroAdapter.ViewHolder holder,int position){
 
         holder.itemView.setTag(carro.get(position));
-        holder.lblCardModelo.setText(carro.get(position).getDueño());
+        holder.lblCardModelo.setText(carro.get(position).getModelo());
+        holder.imagen.setImageResource(carro.get(position).getImagen());
 
 
             }
 
             @Override
             public int getItemCount () {
+
                 return carro.size();
             }
         }
