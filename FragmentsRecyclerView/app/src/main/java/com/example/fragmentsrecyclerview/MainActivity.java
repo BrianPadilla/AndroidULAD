@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements PersonAdapter.Ite
         fragmentManager = this.getSupportFragmentManager();
         listFrag = (ListFrag) fragmentManager.findFragmentById(R.id.listFrag);
 
+
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

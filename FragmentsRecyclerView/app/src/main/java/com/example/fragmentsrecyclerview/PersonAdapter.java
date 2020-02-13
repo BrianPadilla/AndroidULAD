@@ -19,6 +19,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
 
     ItemClicked activity;
 
+
     public interface ItemClicked{
         void onItemClicked(int index);
     }
